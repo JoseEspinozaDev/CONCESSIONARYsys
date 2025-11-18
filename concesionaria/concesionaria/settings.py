@@ -76,15 +76,19 @@ WSGI_APPLICATION = 'concesionaria.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbconcesionaria',
-        'USER': 'root',
-        'PASSWORD':'',
-        'PORT': 3306,
-        'HOST': '127.0.0.1'
-        
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    
+    
+      #'concesionaria': {
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'dbconcesionaria',
+        #'USER': '',
+       # 'PASSWORD':'',
+      #  'PORT': 3306,
+     #   'HOST': '127.0.0.1'  
+    #}
 }
 
 
