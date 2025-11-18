@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dbconcesionaria',
-        'USER': 'root',
+        'USER': '',
         'PASSWORD':'',
         'PORT': 3306,
         'HOST': '127.0.0.1'
