@@ -4,17 +4,17 @@ from django.db import models
 class Vehiculo(models.Model):
     
     class VehiculoTipo(models.TextChoices):
-        NUEVO ='nuevo'
-        USADO = 'usado'
-        SEMINUEVO = 'seminuevo'
+        NUEVO ='nuevo','nuevo'
+        USADO = 'usado','usado'
+        SEMINUEVO = 'seminuevo','seminuevo'
     
     class VehiculoTransmision(models.TextChoices):
-        MANUAL = 'manual'
-        AUTOMATICA= 'automatica'
+        MANUAL = 'manual','manual'
+        AUTOMATICA= 'automatica','manual'
         
     class VehiculoCombustible(models.TextChoices):
-        DIESEL= 'diesel'
-        NORMAL ='normal'
+        DIESEL= 'diesel','diesel'
+        NORMAL ='normal','diesel'
         
         
     vechiculo_id = models.AutoField()
@@ -26,9 +26,11 @@ class Vehiculo(models.Model):
     tipo_vehiculo = models.CharField(max_length=10, choices=VehiculoTipo.choices)
     estado_vehiculo = models.CharField(max_length=50, null=False)
     chasis_vechiculo = models.CharField(max_length=100, unique=True, help_text='Numero de chapa del vehiculo')
+    transmision_vehiculo = models.CharField(max_length=10,choices=VehiculoTransmision.choices)
+    combustible_vehiculo = models.CharField(max_length=10, choices=VehiculoCombustible.choices)
     color_exterior_vehiculo = models.CharField(max_length=50, help_text='Color principal de la carrocería')
     color_interior_vehiculo = models.CharField(max_length=50, help_text='Color interior de la carrocería')
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
  
