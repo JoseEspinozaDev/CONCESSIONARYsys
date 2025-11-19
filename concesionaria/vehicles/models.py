@@ -17,7 +17,7 @@ class Vehiculo(models.Model):
         NORMAL ='normal','diesel'
         
         
-    vechiculo_id = models.AutoField()
+    vechiculo_id = models.AutoField(primary_key=True)
     marca_vechiculo = models.CharField(max_length=50)
     modelo_vechiculo = models.CharField(max_length=50)
     anio_vheiculo = models.PositiveIntegerField()
@@ -34,3 +34,11 @@ class Vehiculo(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
  
+ 
+
+class VehiculoImage(models.Model):
+     id_image_vehiculo = models.AutoField(primary_key=True)
+     vehiculo_id = models.ForeignKey(Vehiculo, on_delete=models.CASCADE)
+     descripcion_image= models.TextField()
+     url_image= models.URLField(max_length=255)
+     created_at = models.DateTimeField(auto_now_add=True)

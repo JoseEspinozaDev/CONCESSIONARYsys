@@ -10,7 +10,7 @@ class User(models.Model):
         VISUALIZADOR = 'visualizador','visualizador'
         
         
-    id_usuario = models.AutoField()
+    id_usuario = models.AutoField(primary_key=True)
     username= models.TextField(max_length=100, unique=True)
     email_usuario=models.TextField(max_length=150, unique=True)
     primer_nombre = models.TextField(max_length=50)
